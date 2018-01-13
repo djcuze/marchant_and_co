@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113055053) do
+ActiveRecord::Schema.define(version: 20180113061917) do
+
+  create_table "invoice_items", force: :cascade do |t|
+    t.integer "invoice_id"
+    t.integer "quantity"
+    t.float "cost"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["invoice_id"], name: "index_invoice_items_on_invoice_id"
+  end
 
   create_table "invoices", force: :cascade do |t|
     t.datetime "created_at", null: false
