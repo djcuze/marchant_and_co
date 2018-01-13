@@ -13,10 +13,18 @@ class InventoryItemsController < ApplicationController
     @inventory_item = InventoryItem.new(inventory_item_params)
     respond_to do |format|
       if @inventory_item.save
-        format.html { redirect_to @inventory_item, notice: 'Inventory Item was successfully created' }
+        format.html { redirect_to @inventory_item, notice: 'Inventory Item was successfully created'}
       else
         format.html { render :new }
       end
+    end
+  end
+
+  def destroy
+    @inventory_item.destroy
+    respond_to do |format|
+      format.html { redirect_to inventory_items_url, notice: 'Inventory Item was successfully destroyed.'}
+      format.json { head :no_content }
     end
   end
 
