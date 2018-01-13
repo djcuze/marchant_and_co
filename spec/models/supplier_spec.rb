@@ -9,6 +9,12 @@ RSpec.describe Supplier, type: :model do
     it 'is valid' do
       expect(subject).to be_valid
     end
+
+    ## Integration
+    it 'should have many suppliers' do
+      t = Supplier.reflect_on_association(:invoices)
+      expect(t.macro).to eq(:has_many)
+    end
   end
 
   context 'without a name' do

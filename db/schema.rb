@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113045922) do
+ActiveRecord::Schema.define(version: 20180113055053) do
+
+  create_table "invoices", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "supplier_id"
+    t.index ["supplier_id"], name: "index_invoices_on_supplier_id"
+  end
 
   create_table "suppliers", force: :cascade do |t|
     t.datetime "created_at", null: false
