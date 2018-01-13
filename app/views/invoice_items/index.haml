@@ -12,6 +12,4 @@
         %td= invoice_item.cost
         %td= invoice_item.inventory_item.description
         %td= link_to 'Delete', invoice_item, method: :delete, data: { confirm: 'Are you sure you want to delete this?' }
-
-%br
 = link_to 'New', new_invoice_item_path

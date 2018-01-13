@@ -1,14 +1,15 @@
 = simple_form_for @invoice_item do |f|
-  = f.label :quantity
-  = f.text_field :quantity
-  %br
-  = f.label :cost
-  = f.text_field :cost
-  = f.input :inventory_item_id, collection: InventoryItem.all unless InventoryItem.count <= 0
-  %br
-  %p Add New Inventory Item
-  = f.simple_fields_for :inventory_item, InventoryItem.new do |inv|
-    = inv.input :description
-  %br¬
-  = f.input :invoice_id, collection: Invoice.all
+  .fieldset
+    = f.label :quantity
+    = f.text_field :quantity
+  .fieldset
+    = f.label :cost
+    = f.text_field :cost
+  .fieldset
+    = f.input :inventory_item_id, collection: InventoryItem.all unless InventoryItem.count <= 0
+    %p Add New Inventory Item
+    = f.simple_fields_for :inventory_item, InventoryItem.new do |inventory_item|
+      = inventory_item.input :description
+  .fieldset
+    = f.input :invoice_id, collection: Invoice.all
   = f.submit
