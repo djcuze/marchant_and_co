@@ -2,7 +2,9 @@
   %thead
     %th Description
     %th Quantity
+    %th Cost
   %tbody
     %tr
-      %td= @inventory_item.description
-      %td= @inventory_item.quantity
+      %td= link_to "#{@invoice_item.inventory_item.description}", @invoice_item.inventory_item
+      %td= @invoice_item.quantity
+      %td= @invoice_item.cost
