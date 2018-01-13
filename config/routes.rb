@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'inventory_items#index'
 
   resources 'inventory_items'
+  resources 'invoice_items'
 end
