@@ -12,10 +12,13 @@ RSpec.describe InvoiceItem, type: :model do
       before(:each) { subject.quantity = 10 }
 
       context 'and an invoice' do
-        before(:each) { subject.invoice = FactoryBot.build(:invoice) }
+        before(:each) { subject.invoice = FactoryBot.create(:invoice) }
 
-        it 'is valid' do
-          expect(subject).to be_valid
+        context 'and an inventory item' do
+          before(:each) { subject.inventory_item = FactoryBot.create(:inventory_item) }
+          it 'is valid' do
+            expect(subject).to be_valid
+          end
         end
       end
     end

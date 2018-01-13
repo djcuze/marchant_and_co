@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113063500) do
+ActiveRecord::Schema.define(version: 20180113070554) do
 
   create_table "inventory_items", force: :cascade do |t|
     t.string "description"
@@ -26,7 +26,9 @@ ActiveRecord::Schema.define(version: 20180113063500) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "inventory_item_id"
+    t.integer "inventory_items_id"
     t.index ["inventory_item_id"], name: "index_invoice_items_on_inventory_item_id"
+    t.index ["inventory_items_id"], name: "index_invoice_items_on_inventory_items_id"
     t.index ["invoice_id"], name: "index_invoice_items_on_invoice_id"
   end
 
