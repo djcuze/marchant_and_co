@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113061917) do
+ActiveRecord::Schema.define(version: 20180113063500) do
+
+  create_table "inventory_items", force: :cascade do |t|
+    t.string "description"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "invoice_items", force: :cascade do |t|
     t.integer "invoice_id"
@@ -18,6 +25,8 @@ ActiveRecord::Schema.define(version: 20180113061917) do
     t.float "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "inventory_item_id"
+    t.index ["inventory_item_id"], name: "index_invoice_items_on_inventory_item_id"
     t.index ["invoice_id"], name: "index_invoice_items_on_invoice_id"
   end
 
