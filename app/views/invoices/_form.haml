@@ -1,6 +1,6 @@
 = simple_form_for @invoice do |f|
   .existing_data
-    = render 'display'
+    = render 'display' unless params[:action] == 'new'
   .fieldset
   = f.input :supplier_id, collection: Supplier.all, include_blank: false
   .fieldset
@@ -16,7 +16,7 @@
             %td= invoice_item.input :quantity, label: false, placeholder: 'Quantity'
             %td= invoice_item.input :cost, label: false, placeholder: 'Cost'
             %td
-              = invoice_item.input :inventory_item_id, collection: InventoryItem.all, label: false, prompt: 'Select Existing'
+              = invoice_item.input :inventory_item_id, collection: InventoryItem.all, label: false, prompt: 'Select Existing', label_method: :description, value_method: :id
               = invoice_item.simple_fields_for :inventory_item, InventoryItem.new do |inventory_item|
                 = inventory_item.input :description, label: false, placeholder: 'Description'
   = f.submit
