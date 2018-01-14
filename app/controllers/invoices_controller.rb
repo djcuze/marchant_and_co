@@ -10,6 +10,9 @@ class InvoicesController < ApplicationController
     @invoice.invoice_items.build
   end
 
+  def edit
+  end
+
   def create
     @invoice = Invoice.new(invoice_params)
 
