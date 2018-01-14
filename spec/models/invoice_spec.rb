@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+require 'factory_bot'
 RSpec.describe Invoice, type: :model do
   subject { described_class.new }
 
@@ -14,7 +14,7 @@ RSpec.describe Invoice, type: :model do
 
   context 'without a supplier' do
     it 'is invalid' do
-      expect(subject).not_to be_valid
+      expect(FactoryBot.build(:supplier, name: nil)).not_to be_valid
     end
   end
 

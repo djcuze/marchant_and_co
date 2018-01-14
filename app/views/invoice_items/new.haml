@@ -6,7 +6,7 @@
     = f.label :cost
     = f.text_field :cost
   .fieldset
-    = f.input :inventory_item_id, collection: InventoryItem.all unless InventoryItem.count <= 0
+    = f.input :inventory_item_id, collection: InventoryItem.all if InventoryItem.any?
     %p Add New Inventory Item
     = f.simple_fields_for :inventory_item, InventoryItem.new do |inventory_item|
       = inventory_item.input :description
