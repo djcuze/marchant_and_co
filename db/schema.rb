@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113070554) do
+ActiveRecord::Schema.define(version: 20180114044525) do
 
   create_table "inventory_items", force: :cascade do |t|
     t.string "description"
-    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

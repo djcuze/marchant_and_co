@@ -8,12 +8,8 @@ RSpec.describe InventoryItem, type: :model do
       subject.description = 'foo bar baz'
     end
 
-    context 'and a quantity' do
-      before(:each) { subject.quantity = 10 }
-
-      it 'is valid' do
-        expect(subject).to be_valid
-      end
+    it 'is valid' do
+      expect(subject).to be_valid
     end
   end
   context 'without attributes' do

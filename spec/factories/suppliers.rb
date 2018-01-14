@@ -9,6 +9,5 @@ FactoryBot.define do
     end
   factory :inventory_item do
     description 'foo bar baz'
-    quantity 10
   end
 end
