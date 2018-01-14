@@ -1,7 +1,19 @@
 = @invoice.created_at
+%br
+= "Supplier: #{@invoice.supplier.name}"
+= "Invoice Total: #{@invoice.total}"
 
 %table
   %thead
-    %th
+    %th Description
+    %th Quantity
+    %th Unit Price
+    %th Total
   %tbody
-    %tr
+    - @invoice.invoice_items.each do |item|
+      %tr
+        %td= item.inventory_item.description
+        %td= item.quantity
+        %td= item.cost
+        %td= item.calculated_total
+
