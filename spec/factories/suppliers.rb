@@ -6,8 +6,14 @@ FactoryBot.define do
 
   factory :invoice do
     supplier FactoryBot.build(:supplier)
-    end
+  end
+
   factory :inventory_item do
     description 'foo bar baz'
+  end
+
+  factory :invoice_item do
+    inventory_item FactoryBot.build(:inventory_item)
+    cost 5.99
   end
 end

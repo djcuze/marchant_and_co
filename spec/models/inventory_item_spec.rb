@@ -17,4 +17,12 @@ RSpec.describe InventoryItem, type: :model do
       expect(subject).not_to be_valid
     end
   end
+
+  context 'given inventory items' do
+    before(:each) { subject.invoice_items << FactoryBot.build(:invoice_item, quantity: 5) }
+
+    it 'calculates its quantity' do
+      expect(subject.quantity).to eq(5)
+    end
+  end
 end

@@ -8,7 +8,7 @@ RSpec.describe InvoiceItem, type: :model do
       subject.cost = 5.99
     end
 
-    context 'and a quantity' do
+    context 'and a quantity above 0' do
       before(:each) { subject.quantity = 10 }
 
       context 'and an invoice' do
@@ -20,6 +20,15 @@ RSpec.describe InvoiceItem, type: :model do
             expect(subject).to be_valid
           end
         end
+      end
+    end
+    context 'and a quantity below 0' do
+      before(:each) do
+        subject.inventory_item = FactoryBot.create(:inventory_item)
+        subject.quantity = -1
+      end
+      it 'is invalid' do
+        expect(subject).not_to be_valid
       end
     end
   end
