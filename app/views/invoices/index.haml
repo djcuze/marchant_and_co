@@ -1,0 +1,12 @@
+%table
+  %thead
+    %th Id
+    %th Supplier
+    %th Delete?
+  %tbody
+    - @invoices.each do |invoice|
+      %tr
+        %td= invoice.id
+        %td= invoice.supplier.name
+        %td= link_to 'Delete', invoice, method: :delete, data: { confirm: 'Are you sure you want to delete this?' }
+= link_to 'New', new_invoice_item_path
