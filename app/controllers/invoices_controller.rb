@@ -32,6 +32,16 @@ class InvoicesController < ApplicationController
     end
   end
 
+  def update
+    respond_to do |format|
+      if @invoice.update(invoice_params)
+        format.html { redirect_to @invoice, notice: 'Invoice was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
   private
 
   def set_invoice
