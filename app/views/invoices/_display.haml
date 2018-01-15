@@ -11,5 +11,5 @@
         %td= item.inventory_item.description
         %td= item.inventory_item.category.name
         %td= item.quantity
-        %td= item.cost
-        %td= item.calculated_total
+        %td= number_to_currency item.cost
+        %td= number_to_currency item.calculated_total

@@ -4,5 +4,5 @@
 = @invoice.created_at
 %br
 = "Supplier: #{@invoice.supplier.name}"
-= "Invoice Total: #{@invoice.total}"
+= "Invoice Total: #{number_to_currency @invoice.total}"
 = render 'display'
