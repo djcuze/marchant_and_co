@@ -5,11 +5,9 @@ RSpec.describe 'Creating an invoice' do
   let!(:inventory_item) { FactoryBot.build(:inventory_item) }
 
   feature 'creates an invoice' do
-    before(:each) do
-      create_invoice_with(inventory_item)
-    end
 
     scenario 'with valid items' do
+      create_invoice_with(inventory_item)
       expect(page).to have_content('You have successfully created an invoice!')
     end
 
