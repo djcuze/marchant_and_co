@@ -3,6 +3,6 @@
   %td= f.input :cost, label: false, placeholder: 'Cost'
   %td
     = f.simple_fields_for :inventory_item, InventoryItem.new do |inventory_item|
-      = inventory_item.input :description, label: false, placeholder: 'Description'
-    = f.input :inventory_item_id, collection: InventoryItem.all, label: false, prompt: 'Select Existing', label_method: :description, value_method: :id
+      = inventory_item.input :description, label: false, placeholder: 'Item Description'
+    = f.input :inventory_item_id, collection: InventoryItem.all, label: false, prompt: 'Select From Existing', label_method: :description, value_method: :id
   %td= link_to_remove_association "Remove", f

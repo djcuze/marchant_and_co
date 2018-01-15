@@ -18,6 +18,12 @@ invoice = Invoice.create!(
   supplier: suppliers.first
 )
 
+categories = Category.create([
+  { name: 'pots' },
+  { name: 'plants' },
+  { name: 'other' }
+])
+
 InvoiceItem.create!(
   inventory_item: inventory_item,
   invoice: invoice,

@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180114044525) do
+ActiveRecord::Schema.define(version: 20180115055430) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "inventory_items", force: :cascade do |t|
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_inventory_items_on_category_id"
   end
 
   create_table "invoice_items", force: :cascade do |t|
@@ -25,9 +31,7 @@ ActiveRecord::Schema.define(version: 20180114044525) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "inventory_item_id"
-    t.integer "inventory_items_id"
     t.index ["inventory_item_id"], name: "index_invoice_items_on_inventory_item_id"
-    t.index ["inventory_items_id"], name: "index_invoice_items_on_inventory_items_id"
     t.index ["invoice_id"], name: "index_invoice_items_on_invoice_id"
   end
 
