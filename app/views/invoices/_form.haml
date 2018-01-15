@@ -4,20 +4,14 @@
   .fieldset
   = f.input :supplier_id, collection: Supplier.all, include_blank: false
   .fieldset
-    %p Add New Invoice Item
-    = f.simple_fields_for :invoice_items, InvoiceItem.new do |invoice_item|
+    #inventoryItems
       %table
         %thead
           %th Quantity
           %th Cost
           %th Inventory Item
+          %th Delete?
         %tbody
-          %tr
-            %td= invoice_item.input :quantity, label: false, placeholder: 'Quantity'
-            %td= invoice_item.input :cost, label: false, placeholder: 'Cost'
-            %td
-              = invoice_item.input :inventory_item_id, collection: InventoryItem.all, label: false, prompt: 'Select Existing', label_method: :description, value_method: :id
-              = invoice_item.simple_fields_for :inventory_item, InventoryItem.new do |inventory_item|
-                = inventory_item.input :description, label: false, placeholder: 'Description'
-            %td= link_to_remove_association "-", invoice_item
-  = f.submit
+          = f.simple_fields_for :invoice_items, InvoiceItem.new do |invoice_item|
+            = render partial: 'invoice_item_fields', locals: { f: invoice_item }
+  = link_to_add_association '+ Add Item', f, :invoice_items, data: {"association-insertion-node" => "tbody", "association-insertion-method" => "append"}
