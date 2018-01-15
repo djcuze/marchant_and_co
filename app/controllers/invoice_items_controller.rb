@@ -35,6 +35,6 @@ class InvoiceItemsController < ApplicationController
   end
 
   def invoice_item_params
-    params.require(:invoice_item).permit(:cost, :quantity, :invoice_id, :inventory_item_id, inventory_item_attributes: [:description, :quantity, :_destroy, :id])
+    params.require(:invoice_item).permit(:cost, :quantity, :invoice_id, :inventory_item_id, inventory_item_attributes: [:description, :quantity, :_destroy, :id, :category_id])
   end
 end

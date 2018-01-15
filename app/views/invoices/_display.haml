@@ -1,6 +1,7 @@
 %table
   %thead
     %th Description
+    %th Category
     %th Quantity
     %th Unit Price
     %th Total
@@ -8,6 +9,7 @@
     - @invoice.invoice_items.each do |item|
       %tr
         %td= item.inventory_item.description
+        %td= item.inventory_item.category.name
         %td= item.quantity
         %td= item.cost
         %td= item.calculated_total

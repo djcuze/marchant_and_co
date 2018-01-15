@@ -6,23 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-suppliers = Supplier.create([
-  { name: 'foo' },
-  { name: 'bar' }])
-
-inventory_item = InventoryItem.create!(
-  description: 'bat'
-)
-
-invoice = Invoice.create!(
-  supplier: suppliers.first
-)
-
 categories = Category.create([
   { name: 'pots' },
   { name: 'plants' },
   { name: 'other' }
 ])
+
+suppliers = Supplier.create([
+  { name: 'foo' },
+  { name: 'bar' }])
+
+inventory_item = InventoryItem.create!(
+  description: 'bat',
+  category: categories.last
+)
+
+invoice = Invoice.create!(
+  supplier: suppliers.first
+)
 
 InvoiceItem.create!(
   inventory_item: inventory_item,
