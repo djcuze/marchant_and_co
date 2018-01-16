@@ -9,4 +9,12 @@ class InvoiceItem < ApplicationRecord
   def calculated_total
     cost * quantity
   end
+
+  def inventory_item_description
+    InventoryItem.try(:description)
+  end
+
+  def inventory_item_description=(name)
+    self.inventory_item = InventoryItem.find_or_create_by!(description: description) if description.present?
+  end
 end

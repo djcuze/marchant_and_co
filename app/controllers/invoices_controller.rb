@@ -1,3 +1,5 @@
+require 'features/invoice_params'
+
 class InvoicesController < ApplicationController
   before_action :set_invoice, only: [:show, :edit, :destroy, :update]
 
@@ -14,8 +16,7 @@ class InvoicesController < ApplicationController
   end
 
   def create
-    @invoice = Invoice.new(invoice_params)
-
+    @invoice = InvoiceParams.call(invoice_params)
     respond_to do |format|
       if @invoice.save!
         format.html { redirect_to @invoice, notice: 'You have successfully created an invoice!' }
@@ -49,7 +50,6 @@ class InvoicesController < ApplicationController
   end
 
   def invoice_params
-    params.require(:invoice).permit(:supplier_id, :invoice_item_id, invoice_items_attributes: [:cost, :quantity, :_destroy, :invoice_id, :inventory_item_id, inventory_item_attributes: [:description, :quantity, :_destroy, :id, :category_id]])
+    params.require(:invoice).permit(:supplier_id, :invoice_item_id, invoice_items_attributes: [:cost, :quantity, :_destroy, :invoice_id, :inventory_item_id, inventory_item_attributes: [:description, :_destroy, :id, :category_id, :category_name]])
   end
-
 end
