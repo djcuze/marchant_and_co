@@ -1,13 +1,14 @@
-%h1.title
-  Marchant
-  %span &
-  Co
-.card__row.flex.row
-  - options = ['invoices']
-  - options.each do |option|
-    .card.box-shadow.flex.column
-      = image_tag("icons/#{option}.png", class: 'icon--large card__image')
-      .card__link__container.flex
-        = link_to "#{option}", class: 'card__link' do
-          = option.capitalize
-        = link_to '+', {:controller => option, :action => :new}, {:class=>'button--circular--large inverse card__button text--bold'}
+.front__page.flex.column
+  %h1.title
+    Marchant
+    %span &
+    Co
+  .card__row.flex.row
+    - options = ['invoices']
+    - options.each do |option|
+      .card.box-shadow.flex.column
+        = image_tag("icons/#{option}.png", class: 'icon--large card__image')
+        .card__link__container.flex
+          = link_to "#{option}", class: 'card__link' do
+            = option.capitalize
+          = link_to '+', {:controller => option, :action => :new}, {:class=>'button--circular--large inverse card__button text--bold'}
