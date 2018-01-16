@@ -2,9 +2,9 @@
 = link_to 'New Invoice', new_invoice_path ,class: 'button align-right'
 %table.table.box-shadow
   %thead.table__header
-    %th.table__header__text Id
-    %th.table__header__text Supplier
-    %th.table__header__text Date Received
+    %th.table__header__text= sortable 'id'
+    %th.table__header__text= sortable 'supplier_id'
+    %th.table__header__text= sortable 'created_at'
     %th.table__header__text Total
   %tbody.table__body
     - @invoices.each do |invoice|

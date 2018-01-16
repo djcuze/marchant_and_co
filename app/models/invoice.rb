@@ -7,4 +7,8 @@ class Invoice < ApplicationRecord
   def total
     @total = invoice_items.sum(&:calculated_total)
   end
+
+  def supplier
+    @supplier = Supplier.find(supplier_id)
+  end
 end

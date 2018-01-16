@@ -1,10 +1,12 @@
 require 'features/invoice_params'
 
 class InvoicesController < ApplicationController
+  helper_method :sort_column, :sort_direction
   before_action :set_invoice, only: [:show, :edit, :destroy, :update]
 
   def index
-    @invoices = Invoice.all
+    params[:sort] ||= 'id'
+    @invoices = Invoice.order(sort_column + " " + sort_direction)
   end
 
   def new
@@ -51,5 +53,13 @@ class InvoicesController < ApplicationController
 
   def invoice_params
     params.require(:invoice).permit(:supplier_id, :invoice_item_id, invoice_items_attributes: [:cost, :quantity, :_destroy, :invoice_id, :inventory_item_id, inventory_item_attributes: [:description, :_destroy, :id, :category_id, :category_name]])
+  end
+
+  def sort_column
+    params[:sort] || 'id'
+  end
+
+  def sort_direction
+    params[:direction] || 'asc'
   end
 end
