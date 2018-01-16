@@ -6,5 +6,8 @@ body {
 
 main {
   max-width: 980px;
-  margin: 50px auto;
+  margin: 50px auto 0;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
 }

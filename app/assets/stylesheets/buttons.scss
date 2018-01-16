@@ -11,8 +11,7 @@
   &:hover {
     background-color: $theme-background-green;
   }
-  &--circular,
-  &--circular--large{
+  &--circular {
     background-color: $theme-background-grey;
     box-sizing: border-box;
     color: white;
@@ -35,6 +34,7 @@
     }
   }
   &--circular--large {
+    @extend .button--circular;
     width: $circular--button--large;
     height: $circular--button--large;
     line-height: calc(#{$circular--button--large} - (#{$circular--button--large} / 10));
