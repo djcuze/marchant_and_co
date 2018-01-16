@@ -1,9 +1,8 @@
 %tr.nested-fields
   %td= f.input :quantity, label: false, placeholder: 'Quantity'
   %td= f.input :cost, label: false, placeholder: 'Cost'
-  %td
-    = f.simple_fields_for :inventory_item, InventoryItem.new do |inventory_item|
-      = inventory_item.input :description, label: false, placeholder: 'Item Description'
-      = inventory_item.input :category_id, collection: Category.all, label: false, prompt: 'Select Category'
-    = f.input :inventory_item_id, collection: InventoryItem.all, label: false, prompt: 'Select From Existing', label_method: :description, value_method: :id
+  = f.simple_fields_for :inventory_item, InventoryItem.new do |inventory_item|
+    %td= inventory_item.input :description, label: false, placeholder: 'Description'
+    %td= inventory_item.text_field :category_name, data: { autocomplete_source: categories_path }, placeholder: 'Category'
+    -#= f.input :inventory_item_id, collection: InventoryItem.all, label: false, prompt: 'Select From Existing', label_method: :description, value_method: :id
   %td= link_to_remove_association "Remove", f

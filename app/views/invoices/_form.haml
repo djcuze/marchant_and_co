@@ -9,7 +9,8 @@
         %thead
           %th Quantity
           %th Cost
-          %th Inventory Item
+          %th Description
+          %th Category
           %th Delete?
         %tbody
           = f.simple_fields_for :invoice_items, InvoiceItem.new do |invoice_item|
