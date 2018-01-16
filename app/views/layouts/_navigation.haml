@@ -1,5 +1,6 @@
 %ul.nav
-  = image_tag('icons/home.png', class: 'icon')
+  = link_to root_path do
+    = image_tag('icons/home.png', class: 'icon')
   %li.nav__item
     = image_tag('icons/invoice.png', class: 'icon')
     = link_to 'Invoices', invoices_path, class: 'nav__link'
