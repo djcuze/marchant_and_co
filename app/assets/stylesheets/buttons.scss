@@ -11,16 +11,33 @@
   &:hover {
     background-color: $theme-background-green;
   }
-  &--circular {
+  &--circular,
+  &--circular--large{
     background-color: $theme-background-grey;
+    box-sizing: border-box;
     color: white;
-    height: 20px;
-    width: 20px;
+    height: $circular--button--small;
+    width: $circular--button--small;
     border-radius: 50%;
     text-align: center;
     line-height: 18px;
     &:hover {
       background-color: $theme-background-green;
     }
+    &.inverse {
+     color: $theme-grey;
+      background-color: white;
+      &:hover {
+        color: white;
+        background-color: $theme-background-green;
+
+      }
+    }
+  }
+  &--circular--large {
+    width: $circular--button--large;
+    height: $circular--button--large;
+    line-height: calc(#{$circular--button--large} - (#{$circular--button--large} / 10));
+    padding-top: 1px;
   }
 }

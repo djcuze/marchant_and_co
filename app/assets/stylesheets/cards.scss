@@ -1,0 +1,35 @@
+@import 'variables';
+.card {
+  background-color: white;
+  min-width: 296px;
+  align-items: center;
+  &__image {
+    margin: 2rem 0;
+  }
+  &__row {
+    justify-content: space-between;
+  }
+  &__link {
+    font-family: $theme-primary-font;
+    color: white;
+    background-color: $theme-background-grey;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    font-size: 1.25rem;
+    &__container {
+      width: 100%;
+      position: relative;
+    }
+    &:hover {
+      background-color: $theme-background-green;
+      transition: all 0.09s ease-in;
+    }
+  }
+  &__button {
+    position: absolute;
+    bottom: .8rem;
+    right: 1rem
+  }
+}

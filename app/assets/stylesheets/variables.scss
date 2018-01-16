@@ -1,12 +1,14 @@
 // Theme Colours
-$theme-grey     :     #444444;
-$theme-red      :     #e56b68;
-$theme-green          :     #77AC48;
-$theme-green-dark     :     #6c9348;
+$theme-grey                   :     #444444;
+$theme-red                    :     #e56b68;
+$theme-green                  :     #77AC48;
+$theme-green-dark             :     #6c9348;
 // Background
-$theme-background-green   :   $theme-green-dark;
-$theme-background-grey     :   $theme-grey;
-
+$theme-background-green       :     $theme-green-dark;
+$theme-background-grey        :     $theme-grey;
 // Fonts
-$theme-primary-font  :     'Barlow', sans-serif;
-$theme-secondary-font     :     'Exo 2', sans-serif;
+$theme-primary-font           :     'Barlow', sans-serif;
+$theme-secondary-font         :     'Exo 2', sans-serif;
+// Buttons
+$circular--button--small      :      20px;
+$circular--button--large      :      27px;
