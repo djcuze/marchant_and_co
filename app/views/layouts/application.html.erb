@@ -4,14 +4,17 @@
   <title>AppV20</title>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Barlow:300,400,600|Exo+2" rel="stylesheet">
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
 <% flash.each do |key, value| %>
-    <div style='text-align:center'><%= value %></div>
+    <div><%= value %></div>
 <% end %>
 <%= render 'layouts/navigation' %>
-<%= yield %>
+<main>
+  <%= yield %>
+</main>
 </body>
 </html>

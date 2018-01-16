@@ -1,0 +1,13 @@
+@import 'variables';
+
+.heading {
+  color: $theme-green;
+  font-size: 2.5rem;
+  font-family: $theme-primary-font;
+}
+
+.text {
+  &--bold {
+    font-weight: bold;
+  }
+}

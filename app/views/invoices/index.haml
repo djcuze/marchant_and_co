@@ -1,16 +1,17 @@
-%table
-  %thead
-    %th Id
-    %th Supplier
-    %th Total
-    %th Delete
-    %th Show?
-  %tbody
+%h1.heading Invoices
+= link_to 'New Invoice', new_invoice_path ,class: 'button'
+%table.table.box-shadow
+  %thead.table__header
+    %th.table__header__text Id
+    %th.table__header__text Supplier
+    %th.table__header__text Date Received
+    %th.table__header__text Total
+    %th.table__header__text Show?
+  %tbody.table__body
     - @invoices.each do |invoice|
-      %tr
-        %td= invoice.id
-        %td= invoice.supplier.name
-        %td= number_to_currency invoice.total
-        %td= link_to 'Delete', invoice, method: :delete, data: { confirm: 'Are you sure you want to delete this?' }
-        %td= link_to 'show', invoice
-= link_to 'New', new_invoice_path
+      %tr.table__row
+        %td.table__cell= invoice.id
+        %td.table__cell= invoice.supplier.name
+        %td.table__cell.text--bold= invoice.created_at.strftime('%a, %d %b %Y')
+        %td.table__cell= number_to_currency invoice.total
+        %td.table__cell= link_to 'Open', invoice

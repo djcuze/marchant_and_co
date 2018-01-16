@@ -1,0 +1,41 @@
+@import 'variables';
+
+.table {
+  width: 100%;
+  font-family: $theme-primary-font;
+  background-color: white;
+  &__header {
+    background-color: $theme-background-grey;
+    &__text {
+      font-family: $theme-secondary-font;
+      padding: 1rem;
+      font-size: .75rem;
+      color: white;
+      text-align: left;
+      border-right: 1px solid #4a4a4a;
+    }
+  }
+  &__row {
+    &:nth-of-type(odd) {
+      background-color: rgba(0,0,0,0.05)
+    }
+  }
+  &__cell {
+    border: 1px solid #e9ecef;
+    padding: 1.75rem;
+    font-size: 14px;
+    letter-spacing: .03rem;
+  }
+}
+
+.table__header__text:first-of-type,
+.table__row > td:first-of-type {
+  padding-left: 4.5rem;
+}
+
+.table__cell > a {
+  color: $theme-green;
+  &:hover {
+    color: $theme-green-dark;
+  }
+}
