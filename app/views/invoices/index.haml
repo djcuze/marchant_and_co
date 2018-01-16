@@ -1,17 +1,15 @@
 %h1.heading Invoices
-= link_to 'New Invoice', new_invoice_path ,class: 'button'
+= link_to 'New Invoice', new_invoice_path ,class: 'button align-right'
 %table.table.box-shadow
   %thead.table__header
     %th.table__header__text Id
     %th.table__header__text Supplier
     %th.table__header__text Date Received
     %th.table__header__text Total
-    %th.table__header__text Show?
   %tbody.table__body
     - @invoices.each do |invoice|
-      %tr.table__row
+      %tr.table__row.clickable-row{"data-href" => invoice_url(invoice) }
         %td.table__cell= invoice.id
         %td.table__cell= invoice.supplier.name
         %td.table__cell.text--bold= invoice.created_at.strftime('%a, %d %b %Y')
         %td.table__cell= number_to_currency invoice.total
-        %td.table__cell= link_to 'Open', invoice

@@ -16,8 +16,15 @@
     }
   }
   &__row {
+    cursor: pointer;
     &:nth-of-type(odd) {
-      background-color: rgba(0,0,0,0.05)
+      background-color: rgba(0, 0, 0, 0.05)
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.08);
+      .table__cell {
+        border-right-color: #f3f3f3;
+      };
     }
   }
   &__cell {

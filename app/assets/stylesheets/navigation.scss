@@ -1,0 +1,21 @@
+@import 'variables';
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  height: 50px;
+  overflow: hidden;
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    font-family: $theme-primary-font;
+    padding: 0 15px;
+    border-right: 1px solid #dadada;
+  }
+  &__link {
+    color: #212529;
+    margin: 0 7px;
+  }
+}

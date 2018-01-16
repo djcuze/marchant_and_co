@@ -1,3 +1,10 @@
-%ul
-  %li= link_to 'Invoices', invoices_path
-  %li= link_to 'Invoice_items', invoice_items_path
+%ul.nav
+  = image_tag('icons/home.png', class: 'icon')
+  %li.nav__item
+    = image_tag('icons/invoice.png', class: 'icon')
+    = link_to 'Invoices', invoices_path, class: 'nav__link'
+    = link_to '+', new_invoice_path, class: 'button--circular'
+  %li.nav__item
+    = image_tag('icons/product.png', class: 'icon')
+    = link_to 'Invoice_items', invoice_items_path, class: 'nav__link'
+    = link_to '+', new_invoice_path, class: 'button--circular'
