@@ -1,4 +1,5 @@
 @import 'variables';
+
 .card {
   background-color: white;
   min-width: 296px;
@@ -25,6 +26,9 @@
     &:hover {
       background-color: $theme-background-green;
       transition: all 0.09s ease-in;
+      & + .card__button {
+        color: $theme-background-green;
+      }
     }
   }
   &__button {
