@@ -2,7 +2,8 @@ class InventoryItemsController < ApplicationController
   before_action :set_inventory_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @inventory_items = InventoryItem.all
+    @inventory_items = InventoryItem.order(:description).where('description like ?',"%#{params[:term]}%")
+    render json: @inventory_items.map(&:description)
   end
 
   def new
