@@ -6,6 +6,7 @@ RSpec.describe InventoryItem, type: :model do
   context 'given a description' do
     before(:each) do
       subject.description = 'foo bar baz'
+      subject.category = FactoryBot.build(:category)
     end
 
     it 'is valid' do

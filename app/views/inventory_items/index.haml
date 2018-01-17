@@ -1,13 +1,13 @@
-%table
-  %thead
-    %th Id
-    %th Description
-    %th Quantity
-  %tbody
+%table.table
+  %thead.table__header
+    %th.table__header__text Id
+    %th.table__header__text Description
+    %th.table__header__text Quantity
+  %tbody.table__body
     - @inventory_items.each do |inventory_item|
-      %tr
-        %td= inventory_item.id
-        %td= inventory_item.description
-        %td= inventory_item.quantity
-        %td= link_to 'Delete', inventory_item, method: :delete, data: { confirm: 'Are you sure you want to delete this?' }
+      %tr.table__row
+        %td.table__cell= inventory_item.id
+        %td.table__cell= inventory_item.description
+        %td.table__cell= inventory_item.quantity
+        %td.table__cell= link_to 'Delete', inventory_item, method: :delete, data: { confirm: 'Are you sure you want to delete this?' }
 = link_to 'New', new_inventory_item_path

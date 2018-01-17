@@ -33,11 +33,4 @@ RSpec.describe InvoiceItem, type: :model do
       end
     end
   end
-
-  # context 'when deleted' do
-  #   let!(:inventory_item) { FactoryBot.create(:inventory_item) }
-  #   let!(:invoice_item) { FactoryBot.create(:invoice_item, quantity: 10, invoice: FactoryBot.create(:invoice), inventory_item: inventory_item) }
-  #
-  #
-  # end
 end

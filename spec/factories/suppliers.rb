@@ -8,8 +8,13 @@ FactoryBot.define do
     supplier FactoryBot.build(:supplier)
   end
 
+  factory :category do
+    name 'Categoric'
+  end
+
   factory :inventory_item do
     description 'foo bar baz'
+    category FactoryBot.build(:category)
   end
 
   factory :invoice_item do

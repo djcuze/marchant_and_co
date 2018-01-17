@@ -20,7 +20,7 @@ RSpec.describe 'Creating an invoice' do
       select(supplier.name, :from => 'invoice_supplier_id')
       fill_in 'Quantity', with: '5'
       fill_in 'Cost', with: '5'
-      fill_in 'Item Description', with: inventory_item
+      fill_in 'Description', with: inventory_item
       click_button 'Create Invoice'
     end
   end

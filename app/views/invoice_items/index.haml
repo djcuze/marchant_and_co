@@ -1,15 +1,16 @@
-%table
-  %thead
-    %th Id
-    %th Quantity
-    %th Cost
-    %th Inventory Item
+= link_to 'New Invoice Item', new_invoice_item_path, class: 'button align-right'
+%table.table
+  %thead.table__header
+    %th.table__header__text Id
+    %th.table__header__text Quantity
+    %th.table__header__text Cost
+    %th.table__header__text Inventory Item
+    %th.table__header__text
   %tbody
     - @invoice_items.each do |invoice_item|
-      %tr
-        %td= invoice_item.id
-        %td= invoice_item.quantity
-        %td= invoice_item.cost
-        %td= invoice_item.inventory_item.description
-        %td= link_to 'Delete', invoice_item, method: :delete, data: { confirm: 'Are you sure you want to delete this?' }
-= link_to 'New', new_invoice_item_path
+      %tr.table__row
+        %td.table__cell= invoice_item.id
+        %td.table__cell= invoice_item.quantity
+        %td.table__cell= invoice_item.cost
+        %td.table__cell= invoice_item.inventory_item.description
+        %td.table__cell= link_to 'Delete', invoice_item, method: :delete, data: { confirm: 'Are you sure you want to delete this?' }
