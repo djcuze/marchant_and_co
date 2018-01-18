@@ -16,7 +16,7 @@
   background-color: $theme-grey;
   padding: .5rem 2rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   &__link {
     color: white;
     font-family: $theme-secondary-font;
@@ -35,6 +35,8 @@
       display: inline-block;
       text-align: center;
       transition: .1s all ease ;
+      padding-left: 1px;
+      box-sizing: border-box;
     }
     &:hover {
       &:before {

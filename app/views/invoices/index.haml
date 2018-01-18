@@ -12,6 +12,6 @@
       %tr.table__row.clickable-row{"data-href" => invoice_url(invoice) }
         %td.table__cell= invoice.invoice_number
         %td.table__cell= invoice.supplier.name
-        -#%td.table__cell= invoice.category.first.capitalize
+        %td.table__cell= invoice.category
         %td.table__cell.text--bold= invoice.received_on_date.strftime('%a, %d %b %Y')
         %td.table__cell= number_to_currency invoice.total

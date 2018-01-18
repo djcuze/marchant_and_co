@@ -22,4 +22,4 @@
           = render partial: 'invoice_item_fields', locals: { f: invoice_item }
   .form__footer
     = link_to_add_association 'Add Item', f, :invoice_items, data: {"association-insertion-node" => "tbody", "association-insertion-method" => "append"}, class: 'form__footer__link'
-  = f.submit 'Create Invoice', data: { confirm: 'Finished adding items and would like to submit?' }
+  = f.submit 'Create Invoice', data: { confirm: 'Finished adding items and would like to submit?' }, class: 'button align-right'

@@ -13,13 +13,7 @@ class Invoice < ApplicationRecord
   end
 
   def category
-    categories = []
-    invoice_items.each do |invoice_item|
-      categories << invoice_item.inventory_item.category
-    end
-    categories.collect(&:name).each do |name|
-      categories.count { |category| category.name == name }
-    end
+    Category.most_popular_for_invoice(id).capitalize
   end
 
   # Itemised Expenditures.
