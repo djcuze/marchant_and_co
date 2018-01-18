@@ -1,0 +1,61 @@
+@import 'variables';
+
+.options {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+}
+
+.settings {
+  background-color: $theme-grey;
+  padding: 5px;
+  margin-left: .4rem;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: .1s all ease;
+  &:hover {
+    background-color: $theme-background-green;
+    cursor: pointer;
+  }
+  &_options {
+    display: none;
+    box-sizing: border-box;
+    position: relative;
+    cursor: default;
+    justify-content: center;
+    flex: 0 0 100%;
+    align-items: center;
+    &:not(th) {
+      background-color: $theme-grey;
+      border-color: $theme-grey !important;
+      flex-direction: row;
+      justify-content: center;
+      padding: 1.75rem .5rem;
+    }
+    .icon--xs,
+    .icon--s {
+      path {
+        fill: white;
+      }
+      &.edit {
+        &:hover {
+          path {
+            fill: $theme-green;
+          }
+        }
+      }
+      &.delete {
+        &:hover {
+          path {
+            fill: $theme-red;
+          }
+        }
+      }
+    }
+    &:not(th) .icon--s {
+      height: 1rem;
+      cursor: pointer;
+    }
+  }
+
+}

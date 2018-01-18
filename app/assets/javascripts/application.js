@@ -15,4 +15,5 @@
 //= require jquery-ui
 //= require cocoon
 //= require garlic
+//= require options
 //= require_tree .

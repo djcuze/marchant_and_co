@@ -1,6 +1,14 @@
+@import 'variables';
+
 .icon {
   width: 25px;
   &--large {
     width: 70px;
+  }
+  &--xs {
+    width: .8rem;
+  }
+  &--s {
+    width: 1.25rem;
   }
 }

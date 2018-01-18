@@ -1,5 +1,7 @@
 %h1.heading Invoices
-= link_to 'New Invoice', new_invoice_path ,class: 'button align-right'
+.options
+  = link_to 'New Invoice', new_invoice_path ,class: 'button align-right'
+  = image_tag('icons/settings.png', class: 'icon settings')
 %table.table.box-shadow
   %thead.table__header
     %th.table__header__text= sortable('invoice_number', 'Invoice #')
@@ -7,6 +9,8 @@
     %th.table__header__text Category
     %th.table__header__text= sortable 'received_on_date', 'Received On'
     %th.table__header__text Total
+    %th.table__header__text.settings_options
+      = image_tag('icons/settings.png', class: 'icon--xs')
   %tbody.table__body
     - @invoices.each do |invoice|
       %tr.table__row.clickable-row{"data-href" => invoice_url(invoice) }
@@ -15,3 +19,8 @@
         %td.table__cell= invoice.category
         %td.table__cell.text--bold= invoice.received_on_date.strftime('%a, %d %b %Y')
         %td.table__cell= number_to_currency invoice.total
+        %td.table__cell.settings_options
+          = link_to edit_invoice_path(invoice), class: 'settings_options__link' do
+            = inline_svg('icons/edit.svg', class: 'icon--s edit', data: {:title => 'Edit'})
+          = link_to invoice, :method => :delete, data: {confirm: 'Are you sure?'}, class: 'settings_options__link' do
+            = inline_svg('icons/delete.svg', class: 'icon--s delete', data: {:title =>'Delete'})

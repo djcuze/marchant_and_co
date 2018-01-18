@@ -11,7 +11,7 @@ jQuery(function () {
     });
 });
 jQuery(document).ready(function ($) {
-    $(".clickable-row").click(function () {
-        window.location = $(this).data("href");
+    $(".clickable-row td:not(.settings_options)").click(function () {
+        window.location = $(this).parent().data("href");
     });
 });

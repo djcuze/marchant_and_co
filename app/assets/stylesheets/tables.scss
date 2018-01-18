@@ -5,6 +5,10 @@
   font-family: $theme-primary-font;
   background-color: white;
   margin-bottom: 1rem;
+  & * {
+    box-sizing: border-box
+  }
+;
   &__row {
     &:nth-of-type(odd) {
       background-color: rgba(0, 0, 0, 0.05)
