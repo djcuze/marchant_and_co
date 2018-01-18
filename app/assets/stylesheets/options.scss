@@ -4,6 +4,11 @@
   align-self: flex-end;
   display: flex;
   align-items: center;
+  margin-bottom: .5rem;
+  .icon {
+    line-height: 25px;
+    font-weight: bold;
+  }
 }
 
 .settings {

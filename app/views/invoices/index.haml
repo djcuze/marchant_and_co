@@ -1,6 +1,6 @@
 %h1.heading Invoices
 .options
-  = link_to 'New Invoice', new_invoice_path ,class: 'button align-right'
+  = link_to '+', new_invoice_path ,class: 'button--circular icon align-right'
   = image_tag('icons/settings.png', class: 'icon settings')
 %table.table.box-shadow
   %thead.table__header
@@ -10,7 +10,7 @@
     %th.table__header__text= sortable 'received_on_date', 'Received On'
     %th.table__header__text Total
     %th.table__header__text.settings_options
-      = image_tag('icons/settings.png', class: 'icon--xs')
+      Options
   %tbody.table__body
     - @invoices.each do |invoice|
       %tr.table__row.clickable-row{"data-href" => invoice_url(invoice) }
