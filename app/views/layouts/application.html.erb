@@ -4,11 +4,12 @@
   <title>AppV20</title>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <link href="https://fonts.googleapis.com/css?family=Barlow:300,400,600|Exo+2" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barlow:300,400,600|Exo+2|Shadows+Into+Light" rel="stylesheet">
   <%= javascript_include_tag 'application', 'data-turbolinks-track': false %>
 </head>
 
 <body>
+<%= inline_svg('icons/training_wheels.svg', class: 'training_wheels_button') %>
 <% flash.each do |key, value| %>
     <%= content_tag :div, value, class: "flash #{key}" %>
 <% end %>
