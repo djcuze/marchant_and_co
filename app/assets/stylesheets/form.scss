@@ -34,7 +34,7 @@
       line-height: 1rem;
       display: inline-block;
       text-align: center;
-      transition: .1s all ease ;
+      transition: .1s all ease;
       padding-left: 1px;
       box-sizing: border-box;
     }
@@ -93,4 +93,14 @@
 .form .table__header__text:first-of-type,
 .form .table__row > td:first-of-type {
   padding-left: 2rem;
+}
+
+.remove_fields {
+  background: image_url('icons/delete.svg') no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 25px;
+  width: 100%;
+  display: block;
+  color: transparent;
 }

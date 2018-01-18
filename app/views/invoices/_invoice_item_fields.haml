@@ -4,4 +4,5 @@
     %td= inventory_item.text_field :category_name, data: { autocomplete_source: categories_path }, placeholder: 'Category'
   %td= f.input :quantity, label: false, placeholder: 'Quantity', input_html: {min: 0, step: 1}
   %td= f.input :cost, label: false, placeholder: 'Cost', input_html: {min:0, step: 'any'}
-  %td= link_to_remove_association "Remove", f, data: { confirm: 'Are you sure?'}
+  %td
+    = link_to_remove_association "Remove", f, data: { confirm: 'Are you sure?'}
