@@ -12,6 +12,9 @@ main {
   align-items: center;
 }
 
+.show {
+  width: 100%;
+}
 .flash ~ main {
   margin: 1rem auto;
 }

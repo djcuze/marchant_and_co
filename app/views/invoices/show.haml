@@ -1,8 +1,19 @@
-%h1 Viewing Invoice
-= link_to 'Edit Invoice', edit_invoice_path
-%br
-= @invoice.created_at
-%br
-= "Supplier: #{@invoice.supplier.name}"
-= "Invoice Total: #{number_to_currency @invoice.total}"
-= render 'display'
+.show.box-shadow
+  .form__header
+    %h1.heading
+      Invoice #
+      %span= @invoice.invoice_number
+    %ul
+      %li
+        %p.form__header__label Supplier
+        %p.form__header__data= @invoice.supplier.name
+      %li
+        %p.form__header__label Received on
+        %p.form__header__data= @invoice.received_on_date
+      %li
+    .price__container
+      %h1.price__container__label Total:
+      %p.price__container__data= number_to_currency @invoice.total
+  = render 'display'
+  .form__footer
+    = link_to 'Edit Invoice', edit_invoice_path, class: 'form__footer__link spanner'

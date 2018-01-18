@@ -71,6 +71,8 @@
   background-color: $theme-grey;
   padding: 1rem 2rem;
   position: relative;
+  box-sizing: border-box;
+  width: 100%;
   &__label {
     color: $theme-green;
     font-family: $theme-secondary-font;
@@ -87,6 +89,10 @@
     span {
       color: white;
     }
+  }
+  &__data {
+    font-family: $theme-primary-font;
+    color: white;
   }
 }
 

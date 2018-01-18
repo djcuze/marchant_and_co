@@ -1,0 +1,22 @@
+@import 'variables';
+
+.price__container {
+  background-color: $theme-green;
+  width: 180px;
+  position: absolute;
+  right: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+  top: 2rem;
+  &__label,
+  &__data {
+    color: white;
+    font-family: $theme-primary-font
+  }
+  &__label {
+    font-size: .85rem;
+  }
+  &__data {
+    font-size: 1.6rem;
+  }
+}

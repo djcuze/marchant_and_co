@@ -13,3 +13,13 @@
     width: 1.25rem;
   }
 }
+
+.spanner:before {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  content: '' !important;
+  background: image_url('icons/edit.svg') no-repeat;
+  background-size: 50%;
+  background-position: center center;
+}

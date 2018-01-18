@@ -1,6 +1,4 @@
 = simple_form_for @invoice, :data => {:persist => 'garlic'},:html => {:class => 'form'} do |f|
-  .existing_data
-    = render 'display' unless params[:action] == 'new'
   .box-shadow
     .form__header
       = f.input :invoice_number, label_html: {class: 'form__header__label'}, label: 'Invoice #'
@@ -10,13 +8,16 @@
         = action_name.capitalize
         %span
           = controller_name.singularize.capitalize
+    .existing_data
+    = render 'display' unless params[:action] == 'new'
     %table.table
-      %thead.table__header
-        %th.table__header__text Description
-        %th.table__header__text Category
-        %th.table__header__text Quantity
-        %th.table__header__text Cost
-        %th.table__header__text Delete?
+      - unless params[:action] == 'edit'
+        %thead.table__header
+          %th.table__header__text Description
+          %th.table__header__text Category
+          %th.table__header__text Quantity
+          %th.table__header__text Cost
+          %th.table__header__text Delete?
       %tbody
         = f.simple_fields_for :invoice_items, InvoiceItem.new do |invoice_item|
           = render partial: 'invoice_item_fields', locals: { f: invoice_item }
