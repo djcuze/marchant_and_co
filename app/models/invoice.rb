@@ -12,6 +12,16 @@ class Invoice < ApplicationRecord
     @supplier = Supplier.find(supplier_id)
   end
 
+  def category
+    categories = []
+    invoice_items.each do |invoice_item|
+      categories << invoice_item.inventory_item.category
+    end
+    categories.collect(&:name).each do |name|
+      categories.count { |category| category.name == name }
+    end
+  end
+
   # Itemised Expenditures.
   # ie. Year-To-Date spend on a particular InventoryItem
 

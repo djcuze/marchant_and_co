@@ -21,7 +21,7 @@ class InvoicesController < ApplicationController
     @invoice = InvoiceParams.call(invoice_params)
     respond_to do |format|
       if @invoice.save!
-        format.html { redirect_to @invoice, notice: 'You have successfully created an invoice!' }
+        format.html { redirect_to @invoice, notice: 'You have successfully created an invoice!'}
       else
         format.html { render :new }
       end
@@ -52,7 +52,7 @@ class InvoicesController < ApplicationController
   end
 
   def invoice_params
-    params.require(:invoice).permit(:supplier_id, :invoice_item_id, invoice_items_attributes: [:cost, :quantity, :_destroy, :invoice_id, :inventory_item_id, inventory_item_attributes: [:description, :_destroy, :id, :category_id, :category_name]])
+    params.require(:invoice).permit(:invoice_number, :received_on_date, :supplier_id, :invoice_item_id, invoice_items_attributes: [:cost, :quantity, :_destroy, :invoice_id, :inventory_item_id, inventory_item_attributes: [:description, :_destroy, :id, :category_id, :category_name]])
   end
 
   def sort_column

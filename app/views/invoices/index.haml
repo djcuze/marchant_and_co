@@ -2,14 +2,16 @@
 = link_to 'New Invoice', new_invoice_path ,class: 'button align-right'
 %table.table.box-shadow
   %thead.table__header
-    %th.table__header__text= sortable 'id'
+    %th.table__header__text= sortable('invoice_number', 'Invoice #')
     %th.table__header__text= sortable 'supplier_id'
-    %th.table__header__text= sortable 'created_at'
+    %th.table__header__text Category
+    %th.table__header__text= sortable 'received_on_date', 'Received On'
     %th.table__header__text Total
   %tbody.table__body
     - @invoices.each do |invoice|
       %tr.table__row.clickable-row{"data-href" => invoice_url(invoice) }
-        %td.table__cell= invoice.id
+        %td.table__cell= invoice.invoice_number
         %td.table__cell= invoice.supplier.name
-        %td.table__cell.text--bold= invoice.created_at.strftime('%a, %d %b %Y')
+        -#%td.table__cell= invoice.category.first.capitalize
+        %td.table__cell.text--bold= invoice.received_on_date.strftime('%a, %d %b %Y')
         %td.table__cell= number_to_currency invoice.total

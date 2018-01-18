@@ -5,12 +5,12 @@
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <link href="https://fonts.googleapis.com/css?family=Barlow:300,400,600|Exo+2" rel="stylesheet">
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': false %>
 </head>
 
 <body>
 <% flash.each do |key, value| %>
-    <div><%= value %></div>
+    <%= content_tag :div, value, class: "flash #{key}" %>
 <% end %>
 <%= render 'layouts/navigation' %>
 <main class="flex column">

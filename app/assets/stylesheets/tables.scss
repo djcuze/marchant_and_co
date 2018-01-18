@@ -4,8 +4,8 @@
   width: 100%;
   font-family: $theme-primary-font;
   background-color: white;
+  margin-bottom: 1rem;
   &__row {
-    cursor: pointer;
     &:nth-of-type(odd) {
       background-color: rgba(0, 0, 0, 0.05)
     }
@@ -54,4 +54,8 @@
   &:hover {
     color: $theme-green-dark;
   }
+}
+
+.clickable-row {
+  cursor: pointer;
 }

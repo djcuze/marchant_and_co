@@ -1,0 +1,16 @@
+@import 'variables';
+#force,
+.flash {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: $nav-height;
+  margin-top: $nav-height;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-family: $theme-primary-font;
+  background-color: #4a4a4a;
+  &.notice {background-color: $theme-green;}
+  &.error {background-color: $theme-red;}
+}

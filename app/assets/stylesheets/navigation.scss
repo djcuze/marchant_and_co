@@ -5,8 +5,10 @@
   top: 0;
   left: 0;
   display: inline-flex;
-  height: 50px;
+  height: $nav-height;
   overflow: hidden;
+  background-color: white;
+  width: 100%;
   &__item {
     display: inline-flex;
     align-items: center;

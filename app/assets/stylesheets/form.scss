@@ -1,0 +1,94 @@
+@import 'variables';
+
+.form {
+  width: 100%;
+}
+
+.form .table__header__text {
+  font-size: 1rem;
+}
+
+.form .table {
+  margin: 0;
+}
+
+.form__footer {
+  background-color: $theme-grey;
+  padding: .5rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  &__link {
+    color: white;
+    font-family: $theme-secondary-font;
+    &::before {
+      background-color: white;
+      color: $theme-grey;
+      margin-right: .5rem;
+      content: "+";
+      font-family: $theme-primary-font;
+      font-weight: bold;
+      border-radius: 50%;
+      height: 1rem;
+      width: 1rem;
+      font-size: .9rem;
+      line-height: 1rem;
+      display: inline-block;
+      text-align: center;
+      transition: .1s all ease ;
+    }
+    &:hover {
+      &:before {
+        background-color: $theme-green;
+        color: white;
+      }
+    }
+  }
+}
+
+.nested-fields {
+  input {
+    width: 90%;
+    box-sizing: border-box;
+    line-height: 2rem;
+    text-indent: .4rem;
+    border-radius: 4px;;
+    border: 1px solid rgb(206, 212, 218);
+    font-family: $theme-primary-font;
+    font-size: .8rem;
+    padding: 5px 10px;
+    &:focus {
+      outline: 1px solid $theme-green;
+    }
+  }
+  td {
+    padding: .75rem;
+  }
+}
+
+.form__header {
+  background-color: $theme-grey;
+  padding: 1rem 2rem;
+  position: relative;
+  &__label {
+    color: $theme-green;
+    font-family: $theme-secondary-font;
+    display: block;
+    margin: .4rem 0;
+  }
+  &__title {
+    color: $theme-green;
+    font-family: $theme-secondary-font;
+    font-size: 2.25rem;
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+    span {
+      color: white;
+    }
+  }
+}
+
+.form .table__header__text:first-of-type,
+.form .table__row > td:first-of-type {
+  padding-left: 2rem;
+}

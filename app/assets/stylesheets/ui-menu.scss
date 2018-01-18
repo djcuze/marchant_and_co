@@ -1,0 +1,19 @@
+@import 'variables';
+
+.ui.autocomplete.ui-menu {
+  display: block !important;
+  box-sizing: border-box;
+}
+.ui-menu .ui-menu-item {
+  padding: 1rem;
+  text-transform: capitalize;
+  font-family: $theme-primary-font;
+  font-size: .8rem;
+  transition: .09s all ease;
+  &:hover {
+    color: white;
+    background-color: $theme-green;
+    border-color: $theme-green;
+    cursor: pointer;
+  }
+}
