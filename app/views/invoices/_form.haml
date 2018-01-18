@@ -1,4 +1,4 @@
-= simple_form_for @invoice, :html => {:class => 'form'} do |f|
+= simple_form_for @invoice, :data => {:persist => 'garlic'},:html => {:class => 'form'} do |f|
   .existing_data
     = render 'display' unless params[:action] == 'new'
   .box-shadow

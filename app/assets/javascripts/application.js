@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require cocoon
-//= require invoice
+//= require garlic
 //= require_tree .
